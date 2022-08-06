@@ -1,0 +1,105 @@
+pytest:
+
+	1. PyTest is a testing framework that allows users to write test codes using Python programming language.
+	2. It helps you to write test cases for databases, APIs, or UI
+	
+Features:	
+
+	1. Can able to generate reports
+	2. Can able to add or skip the particular testcases
+	3. Automatically detect tests
+	
+	
+Installation:
+
+	pip install pytest
+	
+	Note:		help:   py.test -h
+	
+
+
+testcase file creation:
+
+	1. create python file with starting as "test" keyword
+	2. for testcases,  define each testcase name preceeded with "test" keyword
+	
+	Example: test_paramerize_exercise.py( for reference)
+
+	More examples of valid and invalid pytest file names
+
+		test_login.py - valid
+		login_test.py - valid
+		testlogin.py -invalid
+		logintest.py -invalid
+
+
+Assertion:
+
+	1. It is a check to decide whether testcase got passed or not
+	
+		assert true -------> Pass
+		assert false ------> Fail
+		
+	Example:
+	
+		assert "hello" == "Hai" is an assertion failure.
+		assert 4==4 is a successful assertion
+		assert True is a successful assertion
+		assert False is an assertion failure.
+		
+		
+Execution:
+
+	1. To run all testcase file and all testcases(except skip)
+		py.test
+		
+	2. To run particulat testcase file
+		py.test <testcase_file_name.py>
+	
+	3. Run a subset of Entire Test with PyTest
+		
+		Method-1:Grouping of test names by substring matching
+		
+			py.test -k <sub_string> <testcase_file_name.py>	
+			
+			[example]   py.test -k math pytest_example2.py
+			
+			
+		Method-2:Run tests by markers
+		1. Need to define mark before test definition
+		@pytest.mark.<marker_name>
+		
+		Execution:  py.test -m <marker_name> pytest_example2.py
+
+Run Tests in Parallel with Pytest
+
+	1. Need to install pytest-xdist 
+	
+		py.test -n 3(how many testcase need to run parallel)
+	
+
+Skip testcase execution
+	Method-1:
+	@pytest.mark.skip(reason="testing skip functionality")	
+	
+	Method-2:
+	@pytest.mark.skipif(pytest.flag >= 1, reason="Flag not more than 1")
+	
+To Generate xml report:
+	py.test --junitxml=”result.xml”
+	
+	
+	
+To Generate html report:
+
+	install pytest-html library
+
+	pytest test_sample.py -v -s --html=report.html
+
+	add timestamp in html report:
+
+	log_cli = 1
+	log_cli_level = INFO
+	log_cli_format = %(asctime)s [%(levelname)8s] %(message)s (%(filename)s:%(lineno)s)
+	log_cli_date_format=%Y-%m-%d %H:%M:%S
+

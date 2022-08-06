@@ -1,0 +1,418 @@
+(pytest) (base) vvdn@2795--QA--CHN:~/Downloads/python_pro/pytest$ pytest -v test_sample.py 
+============================================================ test session starts =============================================================
+platform linux -- Python 3.8.10, pytest-6.2.5, py-1.10.0, pluggy-1.0.0 -- /home/vvdn/Downloads/Extreme/Script/pytest/bin/python
+cachedir: .pytest_cache
+rootdir: /home/vvdn/Downloads/python_pro/pytest
+plugins: depends-1.0.1
+collected 5 items                                                                                                                            
+
+test_sample.py::test_always_passes PASSED                                                                                              [ 20%]
+test_sample.py::test_always_fails FAILED                                                                                               [ 40%]
+test_sample.py::test_uppercase PASSED                                                                                                  [ 60%]
+test_sample.py::test_reversed PASSED                                                                                                   [ 80%]
+test_sample.py::test_some_primes PASSED                                                                                                [100%]
+
+================================================================== FAILURES ==================================================================
+_____________________________________________________________ test_always_fails ______________________________________________________________
+
+    def test_always_fails():
+>       assert False
+E       assert False
+
+test_sample.py:7: AssertionError
+========================================================== short test summary info ===========================================================
+FAILED test_sample.py::test_always_fails - assert False
+======================================================== 1 failed, 4 passed in 0.07s =========================================================
+
+
+
+
+
+******************************************************************************************************************************************
+******************************************************************************************************************************************
+
+
+
+
+(pytest) (base) vvdn@2795--QA--CHN:~/Downloads/python_pro/pytest$ pytest --full-trace test_sample.py 
+============================================================ test session starts =============================================================
+platform linux -- Python 3.8.10, pytest-6.2.5, py-1.10.0, pluggy-1.0.0
+rootdir: /home/vvdn/Downloads/python_pro/pytest
+plugins: depends-1.0.1
+collected 4 items                                                                                                                            
+
+test_sample.py ....                                                                                                                    [100%]
+
+============================================================= 4 passed in 0.02s ==============================================================
+(pytest) (base) vvdn@2795--QA--CHN:~/Downloads/python_pro/pytest$ pytest -v --full-trace test_sample.py 
+============================================================ test session starts =============================================================
+platform linux -- Python 3.8.10, pytest-6.2.5, py-1.10.0, pluggy-1.0.0 -- /home/vvdn/Downloads/Extreme/Script/pytest/bin/python
+cachedir: .pytest_cache
+rootdir: /home/vvdn/Downloads/python_pro/pytest
+plugins: depends-1.0.1
+collected 4 items                                                                                                                            
+
+test_sample.py::test_always_passes PASSED                                                                                              [ 25%]
+test_sample.py::test_uppercase PASSED                                                                                                  [ 50%]
+test_sample.py::test_reversed PASSED                                                                                                   [ 75%]
+test_sample.py::test_some_primes PASSED                                                                                                [100%]
+
+============================================================= 4 passed in 0.02s ==============================================================
+(pytest) (base) vvdn@2795--QA--CHN:~/Downloads/python_pro/pytest$ 
+(pytest) (base) vvdn@2795--QA--CHN:~/Downloads/python_pro/pytest$ 
+(pytest) (base) vvdn@2795--QA--CHN:~/Downloads/python_pro/pytest$ 
+(pytest) (base) vvdn@2795--QA--CHN:~/Downloads/python_pro/pytest$ pytest -v --full-trace --log-level=TRACE test_sample.py 
+ERROR: 'TRACE' is not recognized as a logging level name for 'log_level'. Please consider passing the logging level num instead.
+
+(pytest) (base) vvdn@2795--QA--CHN:~/Downloads/python_pro/pytest$ pytest -v --full-trace --log-level=1 test_sample.py 
+============================================================ test session starts =============================================================
+platform linux -- Python 3.8.10, pytest-6.2.5, py-1.10.0, pluggy-1.0.0 -- /home/vvdn/Downloads/Extreme/Script/pytest/bin/python
+cachedir: .pytest_cache
+rootdir: /home/vvdn/Downloads/python_pro/pytest
+plugins: depends-1.0.1
+collected 4 items                                                                                                                            
+
+test_sample.py::test_always_passes PASSED                                                                                              [ 25%]
+test_sample.py::test_uppercase PASSED                                                                                                  [ 50%]
+test_sample.py::test_reversed PASSED                                                                                                   [ 75%]
+test_sample.py::test_some_primes PASSED                                                                                                [100%]
+
+============================================================= 4 passed in 0.02s ==============================================================
+
+
+
+******************************************************************************************************************************************
+******************************************************************************************************************************************
+
+
+
+
+(pytest) (base) vvdn@2795--QA--CHN:~/Downloads/python_pro/pytest$ pytest --full-trace --log-level=1 test_sample.py 
+============================================================ test session starts =============================================================
+platform linux -- Python 3.8.10, pytest-6.2.5, py-1.10.0, pluggy-1.0.0
+rootdir: /home/vvdn/Downloads/python_pro/pytest
+plugins: depends-1.0.1
+collected 4 items                                                                                                                            
+
+test_sample.py ....                                                                                                                    [100%]
+
+============================================================= 4 passed in 0.02s ==============================================================
+(pytest) (base) vvdn@2795--QA--CHN:~/Downloads/python_pro/pytest$ pytest --full-trace --log-level=2 test_sample.py 
+============================================================ test session starts =============================================================
+platform linux -- Python 3.8.10, pytest-6.2.5, py-1.10.0, pluggy-1.0.0
+rootdir: /home/vvdn/Downloads/python_pro/pytest
+plugins: depends-1.0.1
+collected 4 items                                                                                                                            
+
+test_sample.py ....                                                                                                                    [100%]
+
+============================================================= 4 passed in 0.02s ==============================================================
+(pytest) (base) vvdn@2795--QA--CHN:~/Downloads/python_pro/pytest$ py.test
+============================================================ test session starts =============================================================
+platform linux -- Python 3.8.10, pytest-6.2.5, py-1.10.0, pluggy-1.0.0
+rootdir: /home/vvdn/Downloads/python_pro/pytest
+plugins: depends-1.0.1
+collected 4 items                                                                                                                            
+
+test_sample.py ....                                                                                                                    [100%]
+
+============================================================= 4 passed in 0.05s ==============================================================
+(pytest) (base) vvdn@2795--QA--CHN:~/Downloads/python_pro/pytest$ pytest -k uppercase test_sample.py 
+============================================================ test session starts =============================================================
+platform linux -- Python 3.8.10, pytest-6.2.5, py-1.10.0, pluggy-1.0.0
+rootdir: /home/vvdn/Downloads/python_pro/pytest
+plugins: depends-1.0.1
+collected 4 items / 3 deselected / 1 selected                                                                                                
+
+test_sample.py .                                                                                                                       [100%]
+
+====================================================== 1 passed, 3 deselected in 0.02s =======================================================
+(pytest) (base) vvdn@2795--QA--CHN:~/Downloads/python_pro/pytest$ 
+(pytest) (base) vvdn@2795--QA--CHN:~/Downloads/python_pro/pytest$ 
+(pytest) (base) vvdn@2795--QA--CHN:~/Downloads/python_pro/pytest$ 
+(pytest) (base) vvdn@2795--QA--CHN:~/Downloads/python_pro/pytest$ pytest -m check test_sample.py 
+============================================================ test session starts =============================================================
+platform linux -- Python 3.8.10, pytest-6.2.5, py-1.10.0, pluggy-1.0.0
+rootdir: /home/vvdn/Downloads/python_pro/pytest
+plugins: depends-1.0.1
+collected 0 items / 1 error                                                                                                                  
+
+=================================================================== ERRORS ===================================================================
+______________________________________________________ ERROR collecting test_sample.py _______________________________________________________
+test_sample.py:3: in <module>
+    @pytest.mark.check
+E   NameError: name 'pytest' is not defined
+========================================================== short test summary info ===========================================================
+ERROR test_sample.py - NameError: name 'pytest' is not defined
+!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!! Interrupted: 1 error during collection !!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
+============================================================== 1 error in 0.13s ==============================================================
+(pytest) (base) vvdn@2795--QA--CHN:~/Downloads/python_pro/pytest$ vi test_sample.py 
+(pytest) (base) vvdn@2795--QA--CHN:~/Downloads/python_pro/pytest$ pytest -m check test_sample.py 
+============================================================ test session starts =============================================================
+platform linux -- Python 3.8.10, pytest-6.2.5, py-1.10.0, pluggy-1.0.0
+rootdir: /home/vvdn/Downloads/python_pro/pytest
+plugins: depends-1.0.1
+collected 4 items / 2 deselected / 2 selected                                                                                                
+
+test_sample.py ..                                                                                                                      [100%]
+
+============================================================== warnings summary ==============================================================
+test_sample.py:3
+  /home/vvdn/Downloads/python_pro/pytest/test_sample.py:3: PytestUnknownMarkWarning: Unknown pytest.mark.check - is this a typo?  You can register custom marks to avoid this warning - for details, see https://docs.pytest.org/en/stable/mark.html
+    @pytest.mark.check
+
+test_sample.py:6
+  /home/vvdn/Downloads/python_pro/pytest/test_sample.py:6: PytestUnknownMarkWarning: Unknown pytest.mark.check - is this a typo?  You can register custom marks to avoid this warning - for details, see https://docs.pytest.org/en/stable/mark.html
+    @pytest.mark.check
+
+-- Docs: https://docs.pytest.org/en/stable/warnings.html
+================================================ 2 passed, 2 deselected, 2 warnings in 0.02s =================================================
+(pytest) (base) vvdn@2795--QA--CHN:~/Downloads/python_pro/pytest$ vi pytest.ini
+(pytest) (base) vvdn@2795--QA--CHN:~/Downloads/python_pro/pytest$ 
+(pytest) (base) vvdn@2795--QA--CHN:~/Downloads/python_pro/pytest$ 
+(pytest) (base) vvdn@2795--QA--CHN:~/Downloads/python_pro/pytest$ 
+(pytest) (base) vvdn@2795--QA--CHN:~/Downloads/python_pro/pytest$ pytest -m check test_sample.py 
+============================================================ test session starts =============================================================
+platform linux -- Python 3.8.10, pytest-6.2.5, py-1.10.0, pluggy-1.0.0
+rootdir: /home/vvdn/Downloads/python_pro/pytest, configfile: pytest.ini
+plugins: depends-1.0.1
+collected 4 items / 2 deselected / 2 selected                                                                                                
+
+test_sample.py ..                                                                                                                      [100%]
+
+====================================================== 2 passed, 2 deselected in 0.02s =======================================================
+(pytest) (base) vvdn@2795--QA--CHN:~/Downloads/python_pro/pytest$ cat pytest.ini 
+[pytest]
+markers =
+    check: mark a test as a check.
+
+(pytest) (base) vvdn@2795--QA--CHN:~/Downloads/python_pro/pytest$ vi test_sample.py 
+(pytest) (base) vvdn@2795--QA--CHN:~/Downloads/python_pro/pytest$ pytest -x test_sample.py 
+============================================================ test session starts =============================================================
+platform linux -- Python 3.8.10, pytest-6.2.5, py-1.10.0, pluggy-1.0.0
+rootdir: /home/vvdn/Downloads/python_pro/pytest, configfile: pytest.ini
+plugins: depends-1.0.1
+collected 4 items                                                                                                                            
+
+test_sample.py ..F
+
+================================================================== FAILURES ==================================================================
+_______________________________________________________________ test_reversed ________________________________________________________________
+
+    def test_reversed():
+>       assert list(reversed([1, 2, 3, 4])) != [4, 3, 2, 1]
+E       assert [4, 3, 2, 1] != [4, 3, 2, 1]
+E        +  where [4, 3, 2, 1] = list(<list_reverseiterator object at 0x7f5d59a00af0>)
+E        +    where <list_reverseiterator object at 0x7f5d59a00af0> = reversed([1, 2, 3, 4])
+
+test_sample.py:11: AssertionError
+========================================================== short test summary info ===========================================================
+FAILED test_sample.py::test_reversed - assert [4, 3, 2, 1] != [4, 3, 2, 1]
+!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!! stopping after 1 failures !!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
+======================================================== 1 failed, 2 passed in 0.07s =========================================================
+(pytest) (base) vvdn@2795--QA--CHN:~/Downloads/python_pro/pytest$ 
+(pytest) (base) vvdn@2795--QA--CHN:~/Downloads/python_pro/pytest$ 
+(pytest) (base) vvdn@2795--QA--CHN:~/Downloads/python_pro/pytest$ pytest -x -tb=none test_sample.py 
+ERROR: usage: pytest [options] [file_or_dir] [file_or_dir] [...]
+pytest: error: unrecognized arguments: -tb=none
+  inifile: /home/vvdn/Downloads/python_pro/pytest/pytest.ini
+  rootdir: /home/vvdn/Downloads/python_pro/pytest
+
+(pytest) (base) vvdn@2795--QA--CHN:~/Downloads/python_pro/pytest$ pytest -x --tb=none test_sample.py 
+ERROR: usage: pytest [options] [file_or_dir] [file_or_dir] [...]
+pytest: error: argument --tb: invalid choice: 'none' (choose from 'auto', 'long', 'short', 'no', 'line', 'native')
+
+(pytest) (base) vvdn@2795--QA--CHN:~/Downloads/python_pro/pytest$ pytest -x --tb=no test_sample.py 
+============================================================ test session starts =============================================================
+platform linux -- Python 3.8.10, pytest-6.2.5, py-1.10.0, pluggy-1.0.0
+rootdir: /home/vvdn/Downloads/python_pro/pytest, configfile: pytest.ini
+plugins: depends-1.0.1
+collected 4 items                                                                                                                            
+
+test_sample.py ..F
+
+========================================================== short test summary info ===========================================================
+FAILED test_sample.py::test_reversed - assert [4, 3, 2, 1] != [4, 3, 2, 1]
+!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!! stopping after 1 failures !!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
+======================================================== 1 failed, 2 passed in 0.02s =========================================================
+(pytest) (base) vvdn@2795--QA--CHN:~/Downloads/python_pro/pytest$ pytest -x --tb=no test_sample.py 
+
+******************************************************************************************************************************************
+******************************************************************************************************************************************
+pytest) (base) vvdn@2795--QA--CHN:~/Downloads/python_pro/pytest$ cat test_sample.py 
+import pytest
+pytest.flag = 0
+
+
+@pytest.mark.check
+def test_always_passes():
+    assert True
+
+@pytest.mark.skip(reason="testing skip functionality")
+def test_uppercase():
+    assert "loud noises".upper() == "LOUD NOISES"
+
+@pytest.mark.skipif(pytest.flag > 0, reason = "Flag not set")
+def test_reversed():
+    assert list(reversed([1, 2, 3, 4])) == [4, 3, 2, 1]
+    pytest.flagpytest.flag += 1
+
+
+@pytest.mark.skipif(pytest.flag >= 1, reason="Flag not more than 1")
+
+def test_some_primes():
+    assert 37 in {
+        num
+        for num in range(1, 50)
+        if num != 1 and not any([num % div == 0 for div in range(2, num)])
+    }
+~                                                                                                                                             
+~                                                                                                                                             
+~                                                                                                                                             
+(pytest) (base) vvdn@2795--QA--CHN:~/Downloads/python_pro/pytest$ pytest -v test_sample.py 
+============================================================ test session starts =============================================================
+platform linux -- Python 3.8.10, pytest-6.2.5, py-1.10.0, pluggy-1.0.0 -- /home/vvdn/Downloads/Extreme/Script/pytest/bin/python
+cachedir: .pytest_cache
+rootdir: /home/vvdn/Downloads/python_pro/pytest, configfile: pytest.ini
+plugins: depends-1.0.1
+collected 4 items                                                                                                                            
+
+test_sample.py::test_always_passes PASSED                                                                                              [ 25%]
+test_sample.py::test_uppercase SKIPPED (testing skip functionality)                                                                    [ 50%]
+test_sample.py::test_reversed PASSED                                                                                                   [ 75%]
+test_sample.py::test_some_primes PASSED                                                                                                [100%]
+
+======================================================== 3 passed, 1 skipped in 0.03s ========================================================
+(pytest) (base) vvdn@2795--QA--CHN:~/Downloads/python_pro/pytest$ 
+
+
+
+
+******************************************************************************************************************************************
+******************************************************************************************************************************************
+
+
+
+(pytest) (base) vvdn@2795--QA--CHN:~/Downloads/python_pro/pytest$ pytest -v test_sample.py 
+============================================================ test session starts =============================================================
+platform linux -- Python 3.8.10, pytest-6.2.5, py-1.10.0, pluggy-1.0.0 -- /home/vvdn/Downloads/Extreme/Script/pytest/bin/python
+cachedir: .pytest_cache
+metadata: {'Python': '3.8.10', 'Platform': 'Linux-5.11.0-27-generic-x86_64-with-glibc2.29', 'Packages': {'pytest': '6.2.5', 'py': '1.10.0', 'pluggy': '1.0.0'}, 'Plugins': {'html': '3.1.1', 'depends': '1.0.1', 'metadata': '1.11.0'}}
+rootdir: /home/vvdn/Downloads/python_pro/pytest, configfile: pytest.ini
+plugins: html-3.1.1, depends-1.0.1, metadata-1.11.0
+collected 4 items                                                                                                                            
+
+test_sample.py::test_always_passes PASSED                                                                                              [ 25%]
+test_sample.py::test_uppercase SKIPPED (testing skip functionality)                                                                    [ 50%]
+test_sample.py::test_reversed PASSED                                                                                                   [ 75%]
+test_sample.py::test_some_primes PASSED                                                                                                [100%]
+
+======================================================== 3 passed, 1 skipped in 0.02s ========================================================
+(pytest) (base) vvdn@2795--QA--CHN:~/Downloads/python_pro/pytest$ pytest -v -s test_sample.py 
+============================================================ test session starts =============================================================
+platform linux -- Python 3.8.10, pytest-6.2.5, py-1.10.0, pluggy-1.0.0 -- /home/vvdn/Downloads/Extreme/Script/pytest/bin/python
+cachedir: .pytest_cache
+metadata: {'Python': '3.8.10', 'Platform': 'Linux-5.11.0-27-generic-x86_64-with-glibc2.29', 'Packages': {'pytest': '6.2.5', 'py': '1.10.0', 'pluggy': '1.0.0'}, 'Plugins': {'html': '3.1.1', 'depends': '1.0.1', 'metadata': '1.11.0'}}
+rootdir: /home/vvdn/Downloads/python_pro/pytest, configfile: pytest.ini
+plugins: html-3.1.1, depends-1.0.1, metadata-1.11.0
+collected 4 items                                                                                                                            
+
+test_sample.py::test_always_passes TestCase_1 passed
+PASSED
+test_sample.py::test_uppercase SKIPPED (testing skip functionality)
+test_sample.py::test_reversed TestCase_3 passed
+1
+PASSED
+test_sample.py::test_some_primes TestCase_4 passed
+PASSED
+
+======================================================== 3 passed, 1 skipped in 0.01s ========================================================
+(pytest) (base) vvdn@2795--QA--CHN:~/Downloads/python_pro/pytest$ pytest -v -q test_sample.py 
+============================================================ test session starts =============================================================
+platform linux -- Python 3.8.10, pytest-6.2.5, py-1.10.0, pluggy-1.0.0
+rootdir: /home/vvdn/Downloads/python_pro/pytest, configfile: pytest.ini
+plugins: html-3.1.1, depends-1.0.1, metadata-1.11.0
+collected 4 items                                                                                                                            
+
+test_sample.py .s..                                                                                                                    [100%]
+
+======================================================== 3 passed, 1 skipped in 0.01s ========================================================
+(pytest) (base) vvdn@2795--QA--CHN:~/Downloads/python_pro/pytest$ pytest -q test_sample.py 
+.s..                                                                                                                                   [100%]
+3 passed, 1 skipped in 0.01s
+(pytest) (base) vvdn@2795--QA--CHN:~/Downloads/python_pro/pytest$ 
+
+
+
+******************************************************************************************************************************************
+******************************************************************************************************************************************
+
+
+Parametrize:
+--------------
+
+
+pytest) (base) vvdn@2795--QA--CHN:~/Downloads/python_pro/pytest$ cat test_paramerize_exercise.py 
+import pytest
+
+def add(x,y):
+    return x+y
+
+@pytest.mark.parametrize('num1, num2, res', [ (1, 2, 3), ('Hi ', 'Everyone', 'Hi Everyone'), (9.2, 1.7, 10.899999999999999) ] )
+
+def test_add(num1, num2, res):
+    i=0
+    assert add(num1, num2) == res
+    print("TestCase_", i , "passed")
+    i += 1
+
+
+
+pytest) (base) vvdn@2795--QA--CHN:~/Downloads/python_pro/pytest$ pytest -v test_paramerize_exercise.py 
+============================================================ test session starts =============================================================
+platform linux -- Python 3.8.10, pytest-6.2.5, py-1.10.0, pluggy-1.0.0 -- /home/vvdn/Downloads/Extreme/Script/pytest/bin/python
+cachedir: .pytest_cache
+metadata: {'Python': '3.8.10', 'Platform': 'Linux-5.11.0-27-generic-x86_64-with-glibc2.29', 'Packages': {'pytest': '6.2.5', 'py': '1.10.0', 'pluggy': '1.0.0'}, 'Plugins': {'html': '3.1.1', 'depends': '1.0.1', 'metadata': '1.11.0'}}
+rootdir: /home/vvdn/Downloads/python_pro/pytest, configfile: pytest.ini
+plugins: html-3.1.1, depends-1.0.1, metadata-1.11.0
+collected 3 items                                                                                                                            
+
+test_paramerize_exercise.py::test_add[1-2-3] PASSED                                                                                    [ 33%]
+test_paramerize_exercise.py::test_add[Hi -Everyone-Hi Everyone] PASSED                                                                 [ 66%]
+test_paramerize_exercise.py::test_add[9.2-1.7-10.899999999999999] PASSED                                                               [100%]
+
+============================================================= 3 passed in 0.01s ==============================================================
+
+
+
+
+
+******************************************************************************************************************************************
+******************************************************************************************************************************************
+
+Generate html report:
+install pytest-html library
+
+pytest test_sample.py -v -s --html=report.html
+
+add timestamp in html report:
+
+log_cli = 1
+log_cli_level = INFO
+log_cli_format = %(asctime)s [%(levelname)8s] %(message)s (%(filename)s:%(lineno)s)
+log_cli_date_format=%Y-%m-%d %H:%M:%S
+
+
+******************************************************************************************************************************************
+******************************************************************************************************************************************
+
+
+     
+
+
+
+
+
+
+
+
